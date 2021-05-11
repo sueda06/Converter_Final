@@ -134,7 +134,6 @@ namespace Business.Concrete
                     System.IO.File.Delete(url);
                     return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".jpeg", Messages.Convert);
                 }
-
                 else if (donusturulecekTur == ImageFileType.Png.ToString().ToLower())
                 {
                     ImageConvertOptions options = new ImageConvertOptions

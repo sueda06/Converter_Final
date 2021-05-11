@@ -71,10 +71,7 @@ namespace WebAPI.Controllers
                
                 operation.Foto = @"wwwroot\\Upload\\" + fileName + "." + extension;
                 operation.DonusturulenFormat = Request.Form["donusturulenformat"];
-                if(operation.DonusturulenFormat.ToLower() == "jpeg")
-                {
-                    operation.DonusturulenFormat = "jpg";
-                }
+                
                 operation.YuklenenFormat = extension;
 
 

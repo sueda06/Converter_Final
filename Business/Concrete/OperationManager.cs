@@ -113,7 +113,7 @@ namespace Business.Concrete
                     return new SuccessDataResult<string>(Server + "converted/" + uniqueString + "a.jp2", Messages.Convert);
                 }
 
-                else if (donusturulecekTur == ImageFileType.Jpeg.ToString().ToLower())
+                else if (donusturulecekTur == "jpg")
                 {
                     ImageConvertOptions options = new ImageConvertOptions
                     {
@@ -122,6 +122,17 @@ namespace Business.Concrete
                     converter.Convert(@"wwwroot/converted/" + uniqueString + ".jpg", options);
                     System.IO.File.Delete(url);
                     return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".jpg", Messages.Convert);
+                }
+
+                else if (donusturulecekTur == "jpeg")
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Jpeg
+                    };
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".jpeg", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".jpeg", Messages.Convert);
                 }
 
                 else if (donusturulecekTur == ImageFileType.Png.ToString().ToLower())

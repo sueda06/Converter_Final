@@ -87,7 +87,7 @@ namespace WebAPI.Controllers
         private bool CheckIfImageFile(IFormFile file)
         {
             var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
-            return (extension.ToLower() == ".jpg" || extension.ToLower() == ".webP" || extension.ToLower() == ".jp2" || extension.ToLower() == ".jpeg" || extension.ToLower() == ".png" || extension.ToLower() == ".gif" || extension.ToLower() == ".tiff"); 
+            return (extension.ToLower() == ".jpg" || extension.ToLower() == ".webp" || extension.ToLower() == ".jp2" || extension.ToLower() == ".jpeg" || extension.ToLower() == ".png" || extension.ToLower() == ".gif" || extension.ToLower() == ".tiff"); 
         }
         private async Task<bool> WriteFile(IFormFile file, string fileName)
         {
